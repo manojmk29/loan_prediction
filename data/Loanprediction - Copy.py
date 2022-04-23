@@ -76,8 +76,8 @@ loan.isnull().sum()
 
 #===========Loading the Required libray
 
-from sklearn.preprocessing import Imputer
-imputer = Imputer(missing_values='NaN', strategy='mean', axis=1)
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(missing_values='NaN', strategy='mean')
 loan_n = loan.iloc[:, 8:11]
 dependat =loan['Dependents']
 dependat = dependat.replace('3+', 3)
